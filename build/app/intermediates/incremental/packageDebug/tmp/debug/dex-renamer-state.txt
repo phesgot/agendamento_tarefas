@@ -1,4 +1,4 @@
-#Fri Mar 01 10:46:43 BRT 2024
+#Tue Mar 05 10:25:05 BRT 2024
 base.0=C\:\\Users\\phesg\\AndroidStudioProjects\\agenda\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 base.1=C\:\\Users\\phesg\\AndroidStudioProjects\\agenda\\build\\app\\intermediates\\desugar_lib_dex\\debug\\classes1000.dex
 base.2=C\:\\Users\\phesg\\AndroidStudioProjects\\agenda\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex

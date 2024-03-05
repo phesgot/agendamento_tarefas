@@ -38,10 +38,22 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "crypto",
+      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/crypto-3.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "cupertino_icons",
       "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/cupertino_icons-1.0.6",
       "packageUri": "lib/",
       "languageVersion": "2.19"
+    },
+    {
+      "name": "date_picker_timeline",
+      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/date_picker_timeline-1.2.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "dbus",
@@ -75,7 +87,7 @@
     },
     {
       "name": "flutter_local_notifications",
-      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_local_notifications-16.3.2",
+      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_local_notifications-16.3.3",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -92,20 +104,8 @@
       "languageVersion": "2.17"
     },
     {
-      "name": "flutter_native_timezone",
-      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_native_timezone-2.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "flutter_test",
       "rootUri": "file:///C:/src/flutter/packages/flutter_test",
-      "packageUri": "lib/",
-      "languageVersion": "3.2"
-    },
-    {
-      "name": "flutter_web_plugins",
-      "rootUri": "file:///C:/src/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -122,8 +122,44 @@
       "languageVersion": "2.16"
     },
     {
-      "name": "js",
-      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/js-0.7.1",
+      "name": "google_fonts",
+      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/google_fonts-6.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/http-1.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/http_parser-4.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.18.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "leak_tracker",
+      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker-10.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
+      "name": "leak_tracker_flutter_testing",
+      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker_flutter_testing-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
+      "name": "leak_tracker_testing",
+      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker_testing-2.0.1",
       "packageUri": "lib/",
       "languageVersion": "3.1"
     },
@@ -135,27 +171,27 @@
     },
     {
       "name": "matcher",
-      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/matcher-0.12.16",
+      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/matcher-0.12.16+1",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "material_color_utilities",
-      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/material_color_utilities-0.5.0",
+      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/material_color_utilities-0.8.0",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "meta",
-      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.10.0",
+      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.11.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "path",
-      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/path-1.8.3",
+      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/path-1.9.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.0"
     },
     {
       "name": "path_provider",
@@ -260,16 +296,28 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "typed_data",
+      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/typed_data-1.3.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/vector_math-2.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
     {
-      "name": "web",
-      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/web-0.3.0",
+      "name": "vm_service",
+      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/vm_service-13.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "web",
+      "rootUri": "file:///C:/Users/phesg/AppData/Local/Pub/Cache/hosted/pub.dev/web-0.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
     },
     {
       "name": "win32",
@@ -296,7 +344,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-03-01T13:59:37.431767Z",
+  "generated": "2024-03-05T14:21:19.055756Z",
   "generator": "pub",
-  "generatorVersion": "3.2.6"
+  "generatorVersion": "3.3.0"
 }
