@@ -104,6 +104,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "flutter_localizations",
+      "rootUri": "file:///C:/src/flutter/packages/flutter_localizations",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///C:/src/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -344,7 +350,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-03-05T14:21:19.055756Z",
+  "generated": "2024-03-06T13:19:15.688169Z",
   "generator": "pub",
   "generatorVersion": "3.3.0"
 }

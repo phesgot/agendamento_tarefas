@@ -2,6 +2,7 @@ import 'package:agenda/screens/home_page.dart';
 import 'package:agenda/screens/theme.dart';
 import 'package:agenda/services/theme_services.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -25,7 +26,12 @@ class MyApp extends StatelessWidget {
       theme: Themes.light,
       darkTheme: Themes.dark,
       themeMode: ThemeServices().theme,
-
+      localizationsDelegates: const [
+        ...GlobalMaterialLocalizations.delegates,
+      ],
+      supportedLocales: const [
+        Locale('pt', 'BR'),
+      ],
       home: const HomePage(),
     );
   }
