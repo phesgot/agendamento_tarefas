@@ -1,3 +1,4 @@
+import 'package:agenda/db/db_helper.dart';
 import 'package:agenda/screens/home_page.dart';
 import 'package:agenda/screens/theme.dart';
 import 'package:agenda/services/theme_services.dart';
@@ -9,6 +10,7 @@ import 'package:intl/date_symbol_data_local.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await DBHelper.initDb();
   await GetStorage.init();
   initializeDateFormatting('pt_BR', null).then((_) {
     runApp(const MyApp());

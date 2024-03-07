@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
+import '../controllers/task_controller.dart';
+import '../models/agendamento.dart';
+
 class AddTaskPage extends StatefulWidget {
   const AddTaskPage({super.key});
 
@@ -13,16 +16,20 @@ class AddTaskPage extends StatefulWidget {
 }
 
 class _AddTaskPageState extends State<AddTaskPage> {
+  final TaskController _taskController = Get.put(TaskController());
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _noteController = TextEditingController();
   DateTime _selectedDate = DateTime.now();
   String _endTime = "9:30";
   String _startTime = DateFormat("hh:mm", "pt_BR").format(DateTime.now()).toString();
+  int _selectedColor = 0;
   int _selectRemind = 5;
   List<int> remindList = [5, 10, 15, 20];
 
   String _selectRepeat = 'None';
   List<String> reaptList = ["Nunca", "Diario", "Semanal", "Mensal"];
 
-  int selectedColor = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +45,8 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 "Agendar",
                 style: headingStyle,
               ),
-              const MyInputField(title: 'Titulo', hint: 'Entre com o titulo aqui'),
-              const MyInputField(title: 'Nota', hint: 'Entre com a nota aqui'),
+              MyInputField(title: 'Titulo', hint: 'Entre com o titulo aqui', controller: _titleController),
+              MyInputField(title: 'Nota', hint: 'Entre com a nota aqui', controller: _noteController),
               MyInputField(
                 title: 'Data',
                 hint: DateFormat.yMd('pt_BR').format(_selectedDate),
@@ -135,7 +142,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   _colorPallete(),
-                  MyButton(label: "Agendar", onTap: (){}),
+                  MyButton(label: "Agendar", onTap: () {_validateDate();}),
                 ],
               )
             ],
@@ -145,8 +152,41 @@ class _AddTaskPageState extends State<AddTaskPage> {
     );
   }
 
-  _colorPallete(){
-    return  Column(
+  _validateDate() {
+    if (_titleController.text.isNotEmpty && _noteController.text.isNotEmpty) {
+      _addTaskToDB();
+      Get.back();
+    } else if (_titleController.text.isEmpty || _noteController.text.isEmpty) {
+      Get.snackbar(
+        "Obrigatorio",
+        "Todos os campos são obrigatorios!",
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.white,
+        colorText: Colors.red,
+        icon: const Icon(Icons.warning_amber_rounded, color: Colors.red),
+      );
+    }
+  }
+
+  _addTaskToDB() async {
+    int value = await _taskController.addTask(
+        task: Task(
+          note: _noteController.text,
+          title: _titleController.text,
+          date: DateFormat.yMd('pt_BR').format(_selectedDate),
+          startTime: _startTime,
+          endTime: _endTime,
+          remind: _selectRemind,
+          repeat: _selectRepeat,
+          color: _selectedColor,
+          isCompleted: 0,
+        )
+    );
+    print("Meu ID é $value");
+  }
+
+  _colorPallete() {
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
@@ -157,11 +197,11 @@ class _AddTaskPageState extends State<AddTaskPage> {
         Wrap(
           children: List<Widget>.generate(
             3,
-                (int index) {
+            (int index) {
               return GestureDetector(
                 onTap: () {
                   setState(() {
-                    selectedColor = index;
+                    _selectedColor = index;
                     debugPrint("$index");
                   });
                 },
@@ -172,11 +212,9 @@ class _AddTaskPageState extends State<AddTaskPage> {
                     backgroundColor: index == 0
                         ? primaryClr
                         : index == 1
-                        ? pinkClr
-                        : yellowClr,
-                    child: selectedColor == index
-                        ? const Icon(Icons.done, color: Colors.white, size: 16)
-                        : Container(),
+                            ? pinkClr
+                            : yellowClr,
+                    child: _selectedColor == index ? const Icon(Icons.done, color: Colors.white, size: 16) : Container(),
                   ),
                 ),
               );
