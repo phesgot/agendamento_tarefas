@@ -12,6 +12,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
+import '../models/agendamento.dart';
 import '../widgets/task_tile.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,7 +23,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   DateTime selectedDate = DateTime.now();
   final _taskController = Get.put(TaskController());
   late NotifyHelper notifyHelper;
@@ -50,32 +50,32 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  _showTasks(){
+  _showTasks() {
     return Expanded(
-        child: Obx((){
-          return ListView.builder(
+      child: Obx(() {
+        return ListView.builder(
             itemCount: _taskController.taskList.length,
-              itemBuilder: (_, index){
+            itemBuilder: (_, index) {
               print(_taskController.taskList.length);
-                return AnimationConfiguration.staggeredList(
-                  position: index,
-                  child: SlideAnimation(
-                    child: FadeInAnimation(
-                      child: Row(
-                        children: [
-                          GestureDetector(
-                            onTap: (){
-                              print("Clicouu");
-                            },
-                            child: TaskTile(_taskController.taskList[index].title.toString()),
-                          )
-                        ],
-                      ),
+              return AnimationConfiguration.staggeredList(
+                position: index,
+                child: SlideAnimation(
+                  child: FadeInAnimation(
+                    child: Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            _showBottomSheet(context, _taskController.taskList[index]);
+                          },
+                          child: TaskTile(task: _taskController.taskList[index]),
+                        )
+                      ],
                     ),
                   ),
-                );
-          });
-        }),
+                ),
+              );
+            });
+      }),
     );
   }
 
@@ -90,7 +90,89 @@ class _HomePageState extends State<HomePage> {
   // );
   //
 
-  _addDateBar(){
+  _showBottomSheet(BuildContext context, Task task) {
+    Get.bottomSheet(
+      Container(
+        padding: const EdgeInsets.only(top: 4),
+        height: task.isCompleted == 1
+            ? MediaQuery.of(context).size.height * 0.24
+            : MediaQuery.of(context).size.height * 0.32,
+        width: double.infinity,
+        color: Get.isDarkMode ? darkGreyClr : Colors.white,
+        child: Column(
+          children: [
+            Container(
+              height: 6,
+              width: 120,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10), color: Get.isDarkMode ? Colors.grey[600] : Colors.grey[300]),
+            ),
+            const Spacer(),
+            task.isCompleted == 1
+                ? Container()
+                : _bottomSheetButton(
+                    label: "Completado",
+                    onTap: () {
+                      _taskController.markTaskCompleted(task.id!);
+                      Get.back();
+                    },
+                    clr: primaryClr,
+                    context: context),
+            _bottomSheetButton(
+                label: "Desagendar",
+                onTap: () {
+                  _taskController.delete(task);
+                  Get.back();
+                },
+                clr: Colors.red[300]!,
+                context: context),
+            const SizedBox(height: 20),
+            _bottomSheetButton(
+                label: "Fechar",
+                onTap: () {
+                  Get.back();
+                },
+                clr: Colors.red[300]!,
+                isClose: true,
+                context: context),
+            const SizedBox(height: 10),
+          ],
+        ),
+      ),
+    );
+  }
+
+  _bottomSheetButton({
+    required String label,
+    required Function()? onTap,
+    required Color clr,
+    bool isClose = false,
+    required BuildContext context,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 4),
+        height: 55,
+        width: MediaQuery.of(context).size.width * 0.9,
+        decoration: BoxDecoration(
+            color: isClose == true ? Colors.transparent : clr,
+            border: Border.all(
+              width: 2,
+              color: isClose == true ? Get.isDarkMode?Colors.grey[600]! : Colors.grey[300]! : clr,
+            ),
+            borderRadius: BorderRadius.circular(20)),
+        child: Center(
+          child: Text(
+            label,
+            style: isClose ? titleStyle : titleStyle.copyWith(color: Colors.white),
+          ),
+        ),
+      ),
+    );
+  }
+
+  _addDateBar() {
     return Container(
       margin: const EdgeInsets.only(top: 20, left: 20),
       child: DatePicker(
@@ -101,28 +183,17 @@ class _HomePageState extends State<HomePage> {
         initialSelectedDate: DateTime.now(),
         selectionColor: primaryClr,
         selectedTextColor: Colors.white,
-        dateTextStyle: GoogleFonts.lato(
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
-            color: Colors.grey
-        ),
-        dayTextStyle: GoogleFonts.lato(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-            color: Colors.grey
-        ),
-        monthTextStyle: GoogleFonts.lato(
-            fontSize: 14,
-            fontWeight: FontWeight.w600,
-            color: Colors.grey
-        ),
-        onDateChange: (date){
+        dateTextStyle: GoogleFonts.lato(fontSize: 20, fontWeight: FontWeight.w600, color: Colors.grey),
+        dayTextStyle: GoogleFonts.lato(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.grey),
+        monthTextStyle: GoogleFonts.lato(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.grey),
+        onDateChange: (date) {
           selectedDate = date;
         },
       ),
     );
   }
-  _addTaskBar(){
+
+  _addTaskBar() {
     return Container(
       margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
       child: Row(
@@ -135,17 +206,23 @@ class _HomePageState extends State<HomePage> {
                 DateFormat.yMMMMd('pt_BR').format(DateTime.now()),
                 style: subHeadingStyle,
               ),
-              Text("Hoje", style: headingStyle,),
+              Text(
+                "Hoje",
+                style: headingStyle,
+              ),
             ],
           ),
-          MyButton(label: "Agendar", onTap: () async{
-          await Get.to(const AddTaskPage());
-          _taskController.getTasks();
-          }),
+          MyButton(
+              label: "Agendar",
+              onTap: () async {
+                await Get.to(const AddTaskPage());
+                _taskController.getTasks();
+              }),
         ],
       ),
     );
   }
+
   _appBar() {
     return AppBar(
       leading: GestureDetector(
