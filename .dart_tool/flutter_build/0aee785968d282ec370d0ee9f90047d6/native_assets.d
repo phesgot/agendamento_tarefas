@@ -1,1 +1,0 @@
- C:\\Users\\phesg\\AndroidStudioProjects\\agenda\\.dart_tool\\flutter_build\\0aee785968d282ec370d0ee9f90047d6\\native_assets.yaml: 

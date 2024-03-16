@@ -56,40 +56,60 @@ class _HomePageState extends State<HomePage> {
         return ListView.builder(
             itemCount: _taskController.taskList.length,
             itemBuilder: (_, index) {
-              print(_taskController.taskList.length);
-              return AnimationConfiguration.staggeredList(
-                position: index,
-                child: SlideAnimation(
-                  child: FadeInAnimation(
-                    child: Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            _showBottomSheet(context, _taskController.taskList[index]);
-                          },
-                          child: TaskTile(task: _taskController.taskList[index]),
-                        )
-                      ],
+              Task task = _taskController.taskList[index];
+              //print(task.toJson());
+              if(task.repeat=='Diario'){
+                DateTime date = DateFormat.jm('pt_BR').parse(task.startTime.toString());
+                var myTime = DateFormat('HH:mm', 'pt_BR').format(date);
+                notifyHelper.scheduledNotification(
+                  int.parse(myTime.toString().split(':')[0]),
+                  int.parse(myTime.toString().split(':')[1]),
+                  task
+                );
+                return AnimationConfiguration.staggeredList(
+                  position: index,
+                  child: SlideAnimation(
+                    child: FadeInAnimation(
+                      child: Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              _showBottomSheet(context, task);
+                            },
+                            child: TaskTile(task: task),
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              );
+                );
+              }
+              if(task.date==DateFormat.yMd('pt_BR').format(selectedDate)){
+                return AnimationConfiguration.staggeredList(
+                  position: index,
+                  child: SlideAnimation(
+                    child: FadeInAnimation(
+                      child: Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              _showBottomSheet(context, task);
+                            },
+                            child: TaskTile(task: task),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              }else{
+                return Container();
+              }
+
             });
       }),
     );
   }
-
-  // Container(
-  // width: 100,
-  // height: 50,
-  // color: Colors.green,
-  // margin: const EdgeInsets.only(bottom: 10),
-  // child: Text(
-  // _taskController.taskList[index].title.toString()
-  // ),
-  // );
-  //
-
   _showBottomSheet(BuildContext context, Task task) {
     Get.bottomSheet(
       Container(
@@ -141,7 +161,6 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
   _bottomSheetButton({
     required String label,
     required Function()? onTap,
@@ -171,7 +190,6 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
   _addDateBar() {
     return Container(
       margin: const EdgeInsets.only(top: 20, left: 20),
@@ -187,12 +205,14 @@ class _HomePageState extends State<HomePage> {
         dayTextStyle: GoogleFonts.lato(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.grey),
         monthTextStyle: GoogleFonts.lato(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.grey),
         onDateChange: (date) {
-          selectedDate = date;
+          setState(() {
+            selectedDate = date;
+          });
+
         },
       ),
     );
   }
-
   _addTaskBar() {
     return Container(
       margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
@@ -222,15 +242,16 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
   _appBar() {
     return AppBar(
       leading: GestureDetector(
         onTap: () {
           ThemeServices().switchTheme();
           notifyHelper.displayNotification(
-              title: "Theme Changed", body: Get.isDarkMode ? "Activated Light Theme" : "Activated Dark Theme");
-          notifyHelper.scheduledNotification();
+              title: "Theme Changed",
+              body: Get.isDarkMode ? "Activated Light Theme" : "Activated Dark Theme",
+          );
+          //notifyHelper.scheduledNotification();
         },
         child: Icon(
           Get.isDarkMode ? Icons.wb_sunny_outlined : Icons.nightlight_round,
