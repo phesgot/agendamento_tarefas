@@ -139,14 +139,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_native_timezone:
-    dependency: "direct main"
-    description:
-      name: flutter_native_timezone
-      sha256: "777bc6f6b48a38cca2e700815867eac9c0d701ea0299663ac6954a6e9f2f5197"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.8"
   flutter_staggered_animations:
     dependency: "direct main"
     description:

@@ -1,0 +1,16 @@
+com.example.agenda.app-jetified-annotation-experimental-1.1.0-0 C:\Users\phesg\.gradle\caches\transforms-3\09db32a73384ac2dccccf916d7dc0262\transformed\jetified-annotation-experimental-1.1.0\res
+com.example.agenda.app-core-1.6.0-1 C:\Users\phesg\.gradle\caches\transforms-3\168e459aae59caaab0d2c703cf9d67ab\transformed\core-1.6.0\res
+com.example.agenda.app-jetified-window-1.0.0-beta04-2 C:\Users\phesg\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\res
+com.example.agenda.app-jetified-window-java-1.0.0-beta04-3 C:\Users\phesg\.gradle\caches\transforms-3\978180320ed1d29d66a82edc9d24751e\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.agenda.app-media-1.1.0-4 C:\Users\phesg\.gradle\caches\transforms-3\c7b5e6299f212fe1de353621f13bf5f6\transformed\media-1.1.0\res
+com.example.agenda.app-debug-5 C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\android\app\src\debug\res
+com.example.agenda.app-main-6 C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\android\app\src\main\res
+com.example.agenda.app-pngs-7 C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\build\app\generated\res\pngs\debug
+com.example.agenda.app-resValues-8 C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\build\app\generated\res\resValues\debug
+com.example.agenda.app-rs-9 C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\build\app\generated\res\rs\debug
+com.example.agenda.app-mergeDebugResources-10 C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.agenda.app-mergeDebugResources-11 C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.agenda.app-merged_res-12 C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\build\app\intermediates\merged_res\debug
+com.example.agenda.app-packaged_res-13 C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\build\flutter_local_notifications\intermediates\packaged_res\debug
+com.example.agenda.app-packaged_res-14 C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\build\path_provider_android\intermediates\packaged_res\debug
+com.example.agenda.app-packaged_res-15 C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\build\sqflite\intermediates\packaged_res\debug
