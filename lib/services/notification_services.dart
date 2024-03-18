@@ -5,6 +5,7 @@ import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 
 import '../models/agendamento.dart';
+import '../screens/notified_page.dart';
 
 class NotifyHelper {
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin(); //
@@ -56,9 +57,9 @@ class NotifyHelper {
 
   scheduledNotification(int hour, int minutes, Task task) async {
     await flutterLocalNotificationsPlugin.zonedSchedule(
-        0,
-        'scheduled title',
-        'theme changes 5 seconds ago',
+        task.id!.toInt(),
+        task.title,
+        task.note,
         _convertTime(hour, minutes),
         //tz.TZDateTime.now(tz.local).add(const Duration(seconds: 5)),
         const NotificationDetails(
@@ -69,22 +70,21 @@ class NotifyHelper {
         ),
         androidAllowWhileIdle: true,
         uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
-        matchDateTimeComponents: DateTimeComponents.time
-    );
+        matchDateTimeComponents: DateTimeComponents.time,
+        payload: "$task.title | $task.note");
   }
 
   tz.TZDateTime _convertTime(int hour, int minutes) {
     final tz.TZDateTime now = tz.TZDateTime.now(tz.local);
     tz.TZDateTime scheduleDate = tz.TZDateTime(tz.local, now.year, now.month, now.day, hour, minutes);
 
-    if(scheduleDate.isBefore(now)){
-
-      scheduleDate = scheduleDate.add(const Duration(days:1));
+    if (scheduleDate.isBefore(now)) {
+      scheduleDate = scheduleDate.add(const Duration(days: 1));
     }
     return scheduleDate;
   }
 
-  Future<void> _configureLocalTimezone() async{
+  Future<void> _configureLocalTimezone() async {
     tz.initializeTimeZones();
     tz.setLocalLocation(tz.getLocation("America/Sao_Paulo"));
   }
@@ -107,14 +107,14 @@ class NotifyHelper {
     Get.dialog(const Text("Bem vindo"));
   }
 
-  // Future selectNotification(String? payload) async {
-  //   if (payload != null) {
-  //     debugPrint('Notification payload: $payload');
-  //   } else {
-  //     debugPrint("Notification Done");
-  //   }
-  //   Get.to(() => Container(color: Colors.white));
-  // }
+  Future selectNotification(String? payload) async {
+    if (payload != null) {
+      debugPrint('Notification payload: $payload');
+    } else {
+      debugPrint("Notification Done");
+    }
+    Get.to(() => NotifiedPage(label: payload));
+  }
 
   Future onDidReceiveNotificationResponse(NotificationResponse notificationResponse) async {
     final String? payload = notificationResponse.payload;
