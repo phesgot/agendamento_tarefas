@@ -51,7 +51,7 @@ class NotifyHelper {
       title,
       body,
       platformChannelSpecifics,
-      payload: 'Default Sound',
+      payload: title,
     );
   }
 
@@ -71,7 +71,7 @@ class NotifyHelper {
         androidAllowWhileIdle: true,
         uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
         matchDateTimeComponents: DateTimeComponents.time,
-        payload: "$task.title | $task.note");
+        payload: "${task.title}|""${task.note}|");
   }
 
   tz.TZDateTime _convertTime(int hour, int minutes) {
@@ -109,21 +109,32 @@ class NotifyHelper {
 
   Future selectNotification(String? payload) async {
     if (payload != null) {
-      debugPrint('Notification payload: $payload');
+      print('Notification payload: $payload');
     } else {
-      debugPrint("Notification Done");
+      print("Notification Done");
     }
-    Get.to(() => NotifiedPage(label: payload));
+    if(payload=="Theme Changed"){
+      print("Nothing navigate to");
+    }else{
+      Get.to(()=> NotifiedPage(label: payload));
+    }
+
+
   }
 
   Future onDidReceiveNotificationResponse(NotificationResponse notificationResponse) async {
     final String? payload = notificationResponse.payload;
     if (notificationResponse.payload != null) {
-      debugPrint('notification payload: $payload');
+      print('notification payload: $payload');
     } else {
-      debugPrint("Notification Done");
+      print("Notification Done");
     }
-    Get.to(() => Container(color: Colors.white));
+    if(payload=="Theme Changed"){
+      print("Nothing navigate to");
+
+    }else{
+      Get.to(()=> NotifiedPage(label: payload));
+    }
     // await Navigator.push(
     //   context,
     //   MaterialPageRoute<void>(builder: (context) => SecondScreen(payload)),

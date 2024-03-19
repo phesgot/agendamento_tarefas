@@ -1,7 +1,7 @@
-#Mon Mar 18 16:53:50 BRT 2024
-base.0=C\:\\Users\\phesg\\AndroidStudioProjects\\agendamento_tarefas\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-base.1=C\:\\Users\\phesg\\AndroidStudioProjects\\agendamento_tarefas\\build\\app\\intermediates\\desugar_lib_dex\\debug\\classes1000.dex
-base.2=C\:\\Users\\phesg\\AndroidStudioProjects\\agendamento_tarefas\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
+#Mon Mar 18 22:10:49 BRT 2024
+base.0=D\:\\AndroidStudioProjects\\agendamento_tarefas\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+base.1=D\:\\AndroidStudioProjects\\agendamento_tarefas\\build\\app\\intermediates\\desugar_lib_dex\\debug\\classes1000.dex
+base.2=D\:\\AndroidStudioProjects\\agendamento_tarefas\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
 path.0=classes.dex
 path.1=classes1000.dex
 path.2=classes2.dex

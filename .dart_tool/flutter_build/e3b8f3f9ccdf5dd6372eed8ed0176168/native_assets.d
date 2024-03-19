@@ -1,0 +1,1 @@
+ D:\\AndroidStudioProjects\\agendamento_tarefas\\.dart_tool\\flutter_build\\e3b8f3f9ccdf5dd6372eed8ed0176168\\native_assets.yaml: 

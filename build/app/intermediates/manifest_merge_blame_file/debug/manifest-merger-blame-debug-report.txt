@@ -13,25 +13,25 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\android\app\src\main\AndroidManifest.xml:2:5-66
-15-->C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\android\app\src\main\AndroidManifest.xml:2:22-64
+15-->D:\AndroidStudioProjects\agendamento_tarefas\android\app\src\main\AndroidManifest.xml:2:5-66
+15-->D:\AndroidStudioProjects\agendamento_tarefas\android\app\src\main\AndroidManifest.xml:2:22-64
 16    <uses-permission android:name="android.permission.VIBRATE" />
-16-->C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\android\app\src\main\AndroidManifest.xml:3:5-66
-16-->C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\android\app\src\main\AndroidManifest.xml:3:22-63
+16-->D:\AndroidStudioProjects\agendamento_tarefas\android\app\src\main\AndroidManifest.xml:3:5-66
+16-->D:\AndroidStudioProjects\agendamento_tarefas\android\app\src\main\AndroidManifest.xml:3:22-63
 17    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-17-->C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\android\app\src\main\AndroidManifest.xml:4:5-80
-17-->C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\android\app\src\main\AndroidManifest.xml:4:22-78
+17-->D:\AndroidStudioProjects\agendamento_tarefas\android\app\src\main\AndroidManifest.xml:4:5-80
+17-->D:\AndroidStudioProjects\agendamento_tarefas\android\app\src\main\AndroidManifest.xml:4:22-78
 18    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
-18-->C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\android\app\src\main\AndroidManifest.xml:5:5-79
-18-->C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\android\app\src\main\AndroidManifest.xml:5:22-76
+18-->D:\AndroidStudioProjects\agendamento_tarefas\android\app\src\main\AndroidManifest.xml:5:5-79
+18-->D:\AndroidStudioProjects\agendamento_tarefas\android\app\src\main\AndroidManifest.xml:5:22-76
 19    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-19-->[:flutter_local_notifications] C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-77
-19-->[:flutter_local_notifications] C:\Users\phesg\AndroidStudioProjects\agendamento_tarefas\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-74
+19-->[:flutter_local_notifications] D:\AndroidStudioProjects\agendamento_tarefas\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-77
+19-->[:flutter_local_notifications] D:\AndroidStudioProjects\agendamento_tarefas\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-74
 20
 21    <application
 22        android:name="android.app.Application"
 23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-23-->[androidx.core:core:1.6.0] C:\Users\phesg\.gradle\caches\transforms-3\168e459aae59caaab0d2c703cf9d67ab\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
+23-->[androidx.core:core:1.6.0] C:\Users\pedro.torres\.gradle\caches\transforms-3\168e459aae59caaab0d2c703cf9d67ab\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 24        android:debuggable="true"
 25        android:icon="@mipmap/ic_launcher"
 26        android:label="agenda" >
@@ -83,17 +83,17 @@
 72        </receiver>
 73
 74        <uses-library
-74-->[androidx.window:window:1.0.0-beta04] C:\Users\phesg\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+74-->[androidx.window:window:1.0.0-beta04] C:\Users\pedro.torres\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
 75            android:name="androidx.window.extensions"
-75-->[androidx.window:window:1.0.0-beta04] C:\Users\phesg\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+75-->[androidx.window:window:1.0.0-beta04] C:\Users\pedro.torres\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
 76            android:required="false" />
-76-->[androidx.window:window:1.0.0-beta04] C:\Users\phesg\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+76-->[androidx.window:window:1.0.0-beta04] C:\Users\pedro.torres\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
 77        <uses-library
-77-->[androidx.window:window:1.0.0-beta04] C:\Users\phesg\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+77-->[androidx.window:window:1.0.0-beta04] C:\Users\pedro.torres\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
 78            android:name="androidx.window.sidecar"
-78-->[androidx.window:window:1.0.0-beta04] C:\Users\phesg\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+78-->[androidx.window:window:1.0.0-beta04] C:\Users\pedro.torres\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
 79            android:required="false" />
-79-->[androidx.window:window:1.0.0-beta04] C:\Users\phesg\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+79-->[androidx.window:window:1.0.0-beta04] C:\Users\pedro.torres\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
 80    </application>
 81
 82</manifest>
