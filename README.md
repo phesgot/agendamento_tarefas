@@ -7,6 +7,7 @@ Este é um projeto em Flutter desenvolvido para criar e gerenciar agendamentos n
 - Cadastro de novos agendamentos.
 - Visualização dos agendamentos existentes.
 - Edição e exclusão de agendamentos.
+- Notificações sobre os agendamentos.
 
 ## Tecnologias Utilizadas
 
